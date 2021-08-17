@@ -1,0 +1,87 @@
+
+.credit_card {
+	height: 476px;
+	margin: 0 auto 56px;
+	position: relative;
+	width: 327px;
+}
+.credit_card h3 {
+	background: url(../images/images.png) top no-repeat;
+	background-size: 120px 361px;
+	text-indent: -9999px;
+}
+.credit_card .numbers {
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	background-color: #fff;
+	border: 1px solid #bbc;
+	left: 80px;
+	margin-bottom: 28px;
+	padding: 14px 20px;
+	position: absolute;
+	top: 156px;
+	z-index: 10;
+}
+.credit_card .numbers p {
+	margin-bottom: 0;
+}
+.credit_card .numbers .list {
+	margin-bottom: 0;
+}
+#open-source h3 {
+	background: url(../images/images-2.png) -1566px center no-repeat;
+	background-size: 1633px 56px;
+	padding-left: 88px;
+}
+#major-cards-recognised h3 {
+	background: url(../images/images-2.png) 0 center no-repeat;
+	background-size: 1633px 56px;
+	padding-left: 102px;
+}
+#always-free h3 {
+	background: url(../images/images-2.png) -782px center no-repeat;
+	background-size: 1633px 56px;
+	padding-left: 104px;
+}
+
+form #card_number {
+	background-image: url(../images/images.png), url(../images/images.png);
+	background-position: 15px -121px, 275px -61px;
+	background-size: 120px 376px, 120px 395px;
+	background-repeat: no-repeat;
+	padding-left: 54px;
+	width: 82%;
+}
+form #card_number.visa {
+	background-position: 15px -163px, 275px -61px;
+	margin-right: 15px;
+}
+form #card_number.visa_electron {
+	background-position: 15px -205px, 275px -61px;
+}
+form #card_number.mastercard {
+	background-position: 15px -247px, 275px -61px;
+}
+form #card_number.maestro {
+	background-position: 15px -289px, 275px -61px;
+}
+form #card_number.discover {
+	background-position: 15px -331px, 275px -61px;
+}
+form #card_number.valid.visa {
+	background-position: 15px -163px, 275px -87px;
+}
+form #card_number.valid.visa_electron {
+	background-position: 15px -205px, 275px -87px;
+}
+form #card_number.valid.mastercard {
+	background-position: 15px -250px, 275px -87px;
+}
+form #card_number.valid.maestro {
+	background-position: 15px -289px, 275px -87px;
+}
+form #card_number.valid.discover {
+	background-position: 15px -331px, 275px -87px;
+}
+
