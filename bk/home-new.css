@@ -474,7 +474,7 @@ li {
 .slick-prev {
   width: 60px;
   height: 60px;
-  background-image: url(images/home/arrow-esq.svg);
+  background-image: url(images/arrow-esq.svg);
   background-repeat: no-repeat;
   background-position: 20px center;
   background-size: auto 25px;
@@ -496,7 +496,7 @@ li {
 .slick-next {
   width: 60px;
   height: 60px;
-  background-image: url(images/home/arrow-dir.svg);
+  background-image: url(images/arrow-dir.svg);
   background-repeat: no-repeat;
   background-position: 25px center;
   background-size: auto 25px;
@@ -528,7 +528,6 @@ li {
   padding: 0;
   cursor: pointer;
   border-radius: 30px;
-  box-shadow: 0px 0px 5px #0000009c;
 }
 .slick-dots li button {
   font-size: 0;
@@ -586,10 +585,10 @@ html {
 .main_header {
   padding: 30px 0;
 }
-.main_header img {
-  width: 224px;
+.logos {
+  display: flex;
+  justify-content: space-between;
 }
-
 .contact_wtp span {
   line-height: 20px;
 }
@@ -601,13 +600,21 @@ html {
 }
 .logo {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 25px;
+}
+.logo a {
+  font-size: 0;
 }
 .menu-smart {
   display: none;
 }
 .logo img {
   width: 200px;
+  height: auto;
+  display: block;
+}
+.logo-bk img {
+  width: 224px;
   height: auto;
   display: block;
 }
@@ -739,7 +746,7 @@ html {
   min-height: 588px;
 }
 .banner .fade .familia {
-  background: url(images/home/arte_pessoas_seguro.png) no-repeat;
+  background: url(images/home/banner-familia-ampliado1.png) no-repeat;
   background-size: cover;
   background-position: center center;
 }
@@ -841,7 +848,7 @@ a.button {
   position: relative;
   max-width: 448px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 134px;
   padding: 30px;
   border-radius: 21px;
   background-color: rgba(0, 0, 0, 0.76);
@@ -869,39 +876,26 @@ a.button {
 .banner .fade .sorte img {
   position: absolute;
   right: 0;
-  bottom: -302px;
+  transform: scaleX(-1);
+  bottom: -360px;
 }
 
 .parceria .container,
 .beneficios .container,
 .planos .container,
-.cpc .container,
-.faq .container {
+.cpc .container {
   max-width: 930px;
 }
 
 .title {
-  font-size: 35px;
-  color: #1b365d;
-  margin-bottom: 20px;
-}
-.title i {
-  display: inline-block;
-  height: 35px;
-  background-color: #dc6b2f;
-  vertical-align: middle;
-  margin-right: 20px;
-}
-
-.title-v2 {
   font-size: 30px;
   color: #1b365d;
   margin-bottom: 62px;
   line-height: 40px;
   text-align: center;
 }
-.title-v2::before,
-.title-v2::after {
+.title::before,
+.title::after {
   content: "";
   display: inline-block;
   width: 10px;
@@ -909,14 +903,11 @@ a.button {
   background-color: #dc6b2f;
   vertical-align: bottom;
 }
-.title-v2::before {
+.title:before {
   margin-right: 10px;
 }
-.title-v2::after {
+.title::after {
   margin-left: 10px;
-}
-.title-v2 br {
-  display: none;
 }
 
 .parceria {
@@ -984,18 +975,18 @@ a.button {
 .contrate {
   padding: 60px 0 180px;
 }
-.steps {
+.contrate .steps {
   max-width: 935px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.steps .step {
+.contrate .steps .step {
   flex: 1;
   text-align: center;
 }
-.steps h4 {
+.contrate .steps h4 {
   margin-top: 15px;
   font-size: 25px;
   line-height: 38px;
@@ -1004,10 +995,10 @@ a.button {
 
 .beneficios {
   position: relative;
-  background: url(images/home/Bg_sorte.png) no-repeat;
-  background-size: cover;
+  background: url(images/home/bg_sorte.png) no-repeat;
+  background-size: contain;
   background-position: center;
-  min-height: 372px;
+  height: 372px;
   text-align: center;
 }
 .beneficios .container {
@@ -1017,7 +1008,7 @@ a.button {
   color: #003c00;
   font-size: 30px;
   line-height: 40px;
-  padding-top: 64px;
+  padding-top: 18px;
 }
 .beneficios p {
   padding: 0;
@@ -1040,11 +1031,11 @@ a.button {
 .planos {
   padding: 50px 0;
 }
-.contacts {
+.planos .contacts {
   display: flex;
   justify-content: center;
 }
-.contacts > a {
+.planos .contacts > div {
   display: flex;
   align-items: center;
   border: 1px solid #1b365d;
@@ -1052,18 +1043,18 @@ a.button {
   padding: 15px 30px;
   margin-right: 20px;
 }
-.contacts > a:last-child {
+.planos .contacts > div:last-child {
   margin-right: 0;
 }
-.contacts img {
+.planos .contacts img {
   margin-right: 35px;
 }
-.contacts span {
+.planos .contacts a {
   font-size: 18px;
   line-height: 25px;
   color: #494949;
 }
-.contacts strong {
+.planos .contacts strong {
   display: block;
 }
 
@@ -1351,25 +1342,19 @@ a.button {
 .faq2 input[type="checkbox"] + label {
   font-size: 24px !important;
   line-height: 32px !important;
-  font-weight: 600;
   border: 2px solid rgba(26, 101, 189, 0.4) !important;
-  color: #000000 !important;
+  color: #1a65bd !important;
   display: block !important;
-  border-radius: 10px !important;
+  border-radius: 20px !important;
   padding: 20px !important;
   cursor: pointer !important;
-  outline: none;
-  transition: 0.4s;
 }
 .faq2 input[type="checkbox"] + label:hover {
   border: 2px solid #3769c3 !important;
 }
-.faq2 input[type="checkbox"] + label:focus {
-  border: 2px solid #3769c3 !important;
-}
 .faq2 input[type="checkbox"] + label p {
   display: none !important;
-  color: #1B365D;
+  color: #494949;
   font-weight: 600;
   line-height: 32px !important;
 }
@@ -1403,33 +1388,22 @@ a.button {
 }
 .faq .faq2 li label {
   font-size: 20px !important;
-  line-height: 30px !important;
-  padding: 20px !important;
+  line-height: 28px !important;
+  padding: 15px !important;
 }
 .see-more a {
   display: block;
-  width: 100%;
-  max-width: 360px;
+  width: 265px;
   height: 62px;
-  background-color: transparent;
-  color: #DC6B2F;
-  border: 1px solid #DC6B2F;
-  text-transform: uppercase;
-  font-size: 18px;
+  background-color: #dc6b2f;
+  color: #fff;
+  font-size: 20px;
   text-transform: uppercase;
   line-height: 62px;
   text-decoration: none;
   text-align: center;
   border-radius: 30px;
-  margin: 20px auto 0;
-}
-.faq .duvida {
-  text-align: center;
-  margin-top: 90px;
-  margin-bottom: 40px;
-  font-size: 25px;
-  line-height: 30px;
-  color: #494949;
+  margin-top: 10px;
 }
 .question {
   width: 100%;
@@ -1532,7 +1506,7 @@ input:checked + .question-label::before {
   width: 30px;
   border: 1px solid #1b365d;
   border-radius: 5px;
-  background: url(./images/home/ico-edit.jpg) no-repeat;
+  background: url(../images/home/ico-edit.jpg) no-repeat;
   background-position: center center;
   vertical-align: middle;
   margin-top: 10px;
@@ -1678,12 +1652,12 @@ input:checked + .question-label::before {
   display: inline-block;
   width: 18px;
   height: 21px;
-  background: url(./images/home/ico-pdf.jpg) no-repeat;
+  background: url(../images/home/ico-pdf.jpg) no-repeat;
   vertical-align: middle;
   margin-left: 10px;
 }
 .sorte-page .banner-sorte {
-  background: url(./images/home/bg-saiba-mais.jpg) no-repeat;
+  background: url(../images/home/bg-saiba-mais.jpg) no-repeat;
   background-size: cover;
   position: relative;
   min-height: 335px;
@@ -1734,7 +1708,7 @@ input:checked + .question-label::before {
   padding-top: 25px;
 }
 .sorte-page .numero-mes {
-  background: url(./images/home/banner-sorte.jpg) no-repeat;
+  background: url(../images/home/banner-sorte.jpg) no-repeat;
   background-repeat: no-repeat;
   padding: 50px 0;
   background-size: cover;
@@ -1816,7 +1790,7 @@ input:checked + .question-label::before {
   display: inline-block;
   width: 18px;
   height: 21px;
-  background: url(./images/home/ico-pdf.jpg) no-repeat;
+  background: url(../images/home/ico-pdf.jpg) no-repeat;
   vertical-align: middle;
   margin-left: 10px;
 }
@@ -1833,7 +1807,7 @@ footer {
   color: #fff;
 }
 .main_footer {
-  padding: 65px 0 35px 0;
+  padding: 100px 0;
 }
 .main_footer h4 {
   font-size: 35px;
@@ -1842,13 +1816,11 @@ footer {
   border-bottom: 1px solid #fff;
   padding-bottom: 25px;
 }
-.main_footer h4 i {
-  display: inline-block;
-  width: 10px;
-  height: 35px;
-  background-color: #dc6b2f;
-  vertical-align: middle;
-  margin-right: 20px;
+.main_footer .title {
+  text-align: left;
+}
+.main_footer .title::after {
+  opacity: 0;
 }
 .main_footer h5 {
   font-size: 18px;
@@ -1859,6 +1831,10 @@ footer {
   font-size: 18px;
   font-weight: 400;
   margin: 0 0 20px 0;
+}
+.sec_nav .links {
+  display: flex;
+  justify-content: space-between;
 }
 .sec_nav ul {
   list-style: none;
@@ -1932,8 +1908,12 @@ footer {
   font-weight: 400;
   margin-top: 0;
   display: inline-block;
-  vertical-align: bottom;
-  line-height: 36px;
+  vertical-align: top;
+}
+.ssl_text strong {
+  display: block;
+  font-size: 27px;
+  margin-bottom: 12px;
 }
 .payments_cards .ssl img {
   width: auto;
@@ -1957,8 +1937,9 @@ footer {
   font-weight: 300;
   line-height: 22px;
 }
-.copyright p:last-child {
-  margin-top: 33px;
+.copyright .developed {
+  margin-top: 50px;
+  text-align: center;
 }
 .pulse {
   -webkit-animation-name: pulse;
@@ -2072,401 +2053,13 @@ footer {
     transform: scale3d(1, 1, 1);
   }
 }
-
-/* Seção AP com Funeral */
-
-.banner-funeral {
-  background: url(images/home/arte_pessoas_seguro.png) no-repeat;
-  background-size: cover;
-  background-position: center 55%;
-  min-height: 300px;
-}
-.banner-funeral h3 {
-  color: #1b365d;
-  font-size: 35px;
-  line-height: 40px;
-  letter-spacing: -0.35px;
-  max-width: 650px;
-  padding-top: 40px;
-}
-
-.guia-beneficios {
-  padding: 85px 0 37px;
-}
-.guia-beneficios .container {
-  max-width: 1020px;
-}
-.guia-beneficios .topics {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 34px;
-}
-.guia-beneficios .topic {
-  max-width: 330px;
-  margin-bottom: 34px;
-}
-.guia-beneficios .topic img {
-  display: block;
-  margin: auto;
-  margin-bottom: 30px;
-}
-.guia-beneficios .topic h4 {
-  font-size: 20px;
-  line-height: 30px;
-  color: #1b365d;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 7px;
-}
-.guia-beneficios .topic p {
-  font-size: 18px;
-  line-height: 25px;
-  color: #494949;
-  text-align: center;
-}
-.guia-beneficios .documentacao p {
-  max-width: 300px;
-  margin: auto;
-}
-.guia-beneficios .button {
-  max-width: 400px;
-  margin: auto;
-  font-size: 18px;
-  color: #dc6b2f;
-  text-transform: uppercase;
-  border: 1px solid #1b365d;
-  background-color: transparent;
-}
-
-.pedido {
-  position: relative;
-  background: url(images/home/bg_desfocado_seguro_AP.png) no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 573px;
-  padding: 40px 0;
-}
-.pedido .title-v2 {
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-.pedido .box {
-  background-color: #ffffff;
-  border-radius: 20px;
-  max-width: 536px;
-  padding: 20px;
-  margin: auto;
-}
-.pedido .content {
-  display: flex;
-  justify-content: space-between;
-}
-.pedido .content > div:first-child {
-  flex: 0 1 260px;
-}
-.pedido .content > div:last-child {
-  flex: 0 1 200px;
-}
-.pedido .content h4 {
-  font-size: 15px;
-  line-height: 19px;
-  color: #494949;
-  margin-bottom: 15px;
-}
-.left-side .mult-btns-container {
-  margin-bottom: 20px;
-}
-.left-side .mult-btns-container li {
-  list-style-type: none;
-}
-.left-side .mult-btns-container li input {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-.left-side .mult-button {
-  display: block;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-weight: 600;
-  color: #1b365d;
-  cursor: pointer;
-  border-radius: 10px;
-  background-color: #ffffff;
-  border: 1px solid #1b365d;
-  margin-bottom: 10px;
-  transition: 0.4s;
-}
-
-.left-side .mult-button:hover {
-  background-color: #bbbbbbd9;
-}
-
-input:checked ~ .mult-button {
-  background-color: #1b365d;
-  color: #ffffff;
-}
-
-input:checked ~ .mult-button:hover {
-  background-color: #254775;
-}
-.pedido .prestacao {
-  font-size: 15px;
-  line-height: 22px;
-  color: #1b365d;
-}
-.quant-btns {
-  display: flex;
-  margin-bottom: 28px;
-}
-.pedido .quant-btns .sign {
-  border: none;
-  border-radius: 10px;
-  line-height: 50px;
-	background-color: #ffffff;
-	border: 1px solid #1b365d;
-	width: 50px;
-	height: 50px;
-	font-size: 40px;
-	color: #1b365d;
-}
-.pedido .quant-btns .sign:disabled {
-	opacity: 0.3;
-}
-.pedido .quant-btns .number {
-	background-color: #1b365d;
-	color: #ffffff;
-	width: 60px;
-	height: 50px;
-	font-size: 20px;
-	font-weight: 600;
-	text-align: center;
-	margin: 0 5px;
-	line-height: 50px;
-	border-radius: 10px;
-}
-.pedido .price {
-  display: flex;
-  color: #1B365D;
-  font-weight: 600;
-}
-.pedido .price b {
-  font-size: 20px;
-  line-height: 29px;
-  margin-right: 5px;
-
-}
-.pedido .price strong {
-  font-size: 90px;
-  line-height: 77px;
-  letter-spacing: -2.7px;
-  margin-right: 5px;
-}
-.pedido .price span u {
-  display: block;
-  font-size: 30px;
-  text-decoration: none;
-  
-}
-.pedido .price span em {
-  font-style: normal;
-  font-size: 20px;
-  line-height: 29px;
-}
-.pedido small {
-  font-size: 12px;
-  line-height: 16px;
-  color: #1B365D;
-}
-.pedido .button {
-  margin-top: 30px;
-  font-size: 20px;
-  background-color: #DC6B2F;
-  max-width: 100%;
-}
-
-/* Seção Médico na Tela com AP */
-.banner-medico {
-  background: url(images/home/destaque_medico_na_tela.png) no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 300px;
-}
-.banner-medico h3 {
-  color: #1B365D;
-  font-size: 30px;
-  line-height: 35px;
-  letter-spacing: -0.09px;
-  font-weight: 400;
-  padding: 40px 0;
-}
-.banner-medico h3 strong {
-  font-size: 35px;
-  line-height: 35px;
-  display: block;
-  letter-spacing: -0.1px;
-}
-.banner-medico img {
-  width: 207px;
-  height: auto;
-}
-
-.cuide-mais {
-  padding: 85px 0;
-}
-.cuide-mais .title-v2 {
-  position: relative;
-  padding: 0 20px;
-  margin: 0 auto 25px;
-  width: fit-content;
-  width: -moz-fit-content;
-}
-.cuide-mais .title-v2::before,
-.cuide-mais .title-v2::after {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 5px;
-  height: 100%;
-}
-.cuide-mais .title-v2::before {
-  left: 0;
-}
-.cuide-mais .title-v2::after {
-  right: 0;
-}
-.cuide-mais .subtitle {
-  color: #1B365D;
-  font-size: 20px;
-  line-height: 33px;
-  max-width: 920px;
-  margin: 45px auto 54px;
-  text-align: center;
-}
-.cuide-mais .topics {
-  display: flex;
-  flex-wrap: wrap;
-}
-.cuide-mais .topic {
-  position: relative;
-  flex: 1 380px;
-  padding: 30px 33px;
-}
-.cuide-mais .topic:nth-child(1),
-.cuide-mais .topic:nth-child(2),
-.cuide-mais .topic:nth-child(3) {
-  border-bottom: 1px solid #FB7C0B;
-}
-.cuide-mais .topic:nth-child(2),
-.cuide-mais .topic:nth-child(5) {
-  border-left: 1px solid #FB7C0B;
-  border-right: 1px solid #FB7C0B;
-}
-.cuide-mais .topic:nth-child(2)::before,
-.cuide-mais .topic:nth-child(2)::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 80px;
-  height: 32px;
-  background-color: #ffffff;
-  z-index: 10;
-}
-.cuide-mais .topic:nth-child(2)::before {
-  left: -40px;
-  bottom: -16px;
-}
-.cuide-mais .topic:nth-child(2)::after {
-  right: -40px;
-  bottom: -16px;
-}
-.cuide-mais .topic h4 {
-  font-size: 20px;
-  font-weight: 30px;
-  color: #1B365D;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.como-funciona {
-  padding-bottom: 70px;
-}
-.como-funciona p {
-  color: #1B365D;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-}
-.como-funciona .button {
-  background-color: #1B365D;
-  margin: 30px auto 20px;
-  max-width: 360px;
-}
-.como-funciona .steps {
-  max-width: 100%;
-  align-items: start;
-  margin-top: 100px;
-}
-.como-funciona .steps .arrow {
-  align-self: center;
-}
-.como-funciona .step h4 {
-  color: #494949;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
-}
-
-.pedido.medico-tela {
-  background: url(images/home/bg_desfocado_medico_na_tela.png) no-repeat;
-  background-size: cover;
-  padding: 60px 0;
-  min-height: 495px;
-}
-.pedido.medico-tela .box {
-  padding: 30px;
-}
-.pedido.medico-tela .content {
-  justify-content: start;
-}
-
-.pronto {
-  padding-top: 60px;
-  text-align: center;
-}
-.pronto .container {
-  max-width: 1120px;
-}
-.pronto p {
-  font-size: 20px;
-  line-height: 30px;
-  color: #000000;
-}
-.pronto h4 {
-  font-size: 22px;
-  line-height: 33px;
-  color: #1B365D;
-  margin: 60px 0 30px;
-}
-.pronto p.sintomas {
-  font-size: 20px;
-  line-height: 35px;
-  color: #1B365D;
-}
-
 @media (max-width: 768px) {
   .main_header {
     padding: 20px 0;
     height: 70px;
   }
-  .main_header .row {
-    display: flex;
-  }
-  .main_header .row .col {
-    flex: 0 1;
+  .logos {
+    max-width: 243px;
   }
   .logo {
     margin: 0;
@@ -2475,7 +2068,6 @@ input:checked ~ .mult-button:hover {
   .logo img {
     width: 100px;
     height: auto;
-    margin-right: 46px;
   }
   .logo-bk img {
     width: 97px;
@@ -2518,12 +2110,7 @@ input:checked ~ .mult-button:hover {
     min-height: 584px;
     /* height: 250px; */
     /* background-size: 360px; */
-    background-position: center;
-  }
-  .banner .fade .familia {
-    background: url(images/home/arte_seguro_mobile.png) no-repeat;
-    background-size: contain;
-    background-position: center bottom;
+    background-position: right center;
   }
   .banner .fade .familia h3 {
     font-size: 22px;
@@ -2537,7 +2124,7 @@ input:checked ~ .mult-button:hover {
     text-align: center;
     margin: 15px 0 48px;
   }
-  .banner .fade .sorte {
+  .banner .fade .familia .banner .fade .sorte {
     padding: 0;
   }
   a.button {
@@ -2546,11 +2133,6 @@ input:checked ~ .mult-button:hover {
     min-height: 50px;
     height: 50px;
     line-height: 50px;
-  }
-  .banner .fade .medico {
-    background: url(images/home/arte_medico_mobile.png) no-repeat;
-    background-size: contain;
-    background-position: center bottom;
   }
   .banner .fade .medico h3 {
     font-size: 22px;
@@ -2747,7 +2329,7 @@ input:checked ~ .mult-button:hover {
     margin-top: 5px;
   } */
 
-  .title-v2 {
+  .title {
     position: relative;
     left: -20px;
     width: calc(100% + 20px + 20px);
@@ -2757,8 +2339,8 @@ input:checked ~ .mult-button:hover {
     line-height: 22px;
     text-align: center;
   }
-  .title-v2::before,
-  .title-v2::after {
+  .title::before,
+  .title::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -2766,14 +2348,11 @@ input:checked ~ .mult-button:hover {
     width: 5px;
     height: 100%;
   }
-  .title-v2::before {
+  .title::before {
     left: 0;
   }
-  .title-v2::after {
+  .title::after {
     right: 0;
-  }
-  .title-v2 br {
-    display: block;
   }
 
   .parceria ul li p {
@@ -2816,15 +2395,15 @@ input:checked ~ .mult-button:hover {
   .contrate .title {
     margin-bottom: 30px;
   }
-  .steps {
+  .contrate .steps {
     flex-direction: column;
   }
-  .steps h4 {
+  .contrate .steps h4 {
     font-size: 18px;
     line-height: 27px;
     margin-top: 0;
   }
-  .steps .arrow {
+  .contrate .steps .arrow {
     margin: 20px 0;
     transform: rotate(90deg);
   }
@@ -2875,10 +2454,7 @@ input:checked ~ .mult-button:hover {
     padding: 30px 0;
   }
   .beneficios {
-    background: url(images/home/Bg_sorte.png) no-repeat;
-    background-size: 230%;
-    background-position: -127px 50px;
-    padding: 50px 0;
+    padding: 30px 0;
   }
   .beneficios .content {
     max-width: 200px;
@@ -2888,41 +2464,34 @@ input:checked ~ .mult-button:hover {
   .beneficios h3 {
     font-size: 20px;
     line-height: 25px;
-    padding-top: 20px;
-    margin-bottom: 111px;
+    margin-bottom: 30px;
   }
   .beneficios p {
     color: #000000;
     font-size: 16px;
     line-height: 22px;
-    margin-bottom: 30px;
-    font-weight: 400;
-  }
-  .beneficios p strong {
-    font-size: 18px;
-    font-weight: 700;
   }
 
-  .contacts {
+  .planos .contacts {
     flex-direction: column;
   }
-  .contacts > a {
+  .planos .contacts > div {
     padding: 15px 12px;
     width: 100%;
     border-radius: 15px;
     margin-bottom: 15px;
   }
-  .contacts > a:last-child {
+  .planos .contacts > div:last-child {
     margin-bottom: 0;
   }
-  .contacts img {
+  .planos .contacts img {
     margin-right: 13px;
   }
-  .contacts span {
+  .planos .contacts a {
     font-size: 16px;
     line-height: 22px;
   }
-  .contacts strong {
+  .planos .contacts strong {
     font-size: 18px;
   }
 
@@ -2932,7 +2501,6 @@ input:checked ~ .mult-button:hover {
   .cpc h4 {
     font-size: 15px;
     line-height: 22px;
-    text-align: center;
   }
   .cpc .inputs > div {
     margin: 0;
@@ -2947,7 +2515,7 @@ input:checked ~ .mult-button:hover {
     font-size: 15px;
     line-height: 22px;
     height: auto;
-    min-height: 208px;
+    min-height: 184px;
   }
   #btn-submit {
     margin: 0;
@@ -3067,9 +2635,8 @@ input:checked ~ .mult-button:hover {
   .main_footer .grid_2 {
     display: none;
   }
-  .main_footer h4 i {
-    width: 5px;
-    height: 20px;
+  .sec_nav .links {
+    flex-direction: column;
   }
   .sec_nav ul li {
     padding-bottom: 20px;
@@ -3091,6 +2658,9 @@ input:checked ~ .mult-button:hover {
   }
   .tel .btn-sinistro:last-child .btn-tel {
     margin-bottom: 0;
+  }
+  .main_footer .grid_1 {
+    display: none;
   }
   .main_footer h5 {
     font-size: 15px;
@@ -3125,8 +2695,8 @@ input:checked ~ .mult-button:hover {
     font-size: 13px;
     line-height: 20px;
   }
-  .copyright p:last-child {
-    margin-top: 18px;
+  .copyright .developed {
+    margin-top: 35px;
   }
   .menu-mobile {
     position: absolute;
@@ -3178,7 +2748,7 @@ input:checked ~ .mult-button:hover {
     display: block;
     width: 30px;
     height: 30px;
-    background-image: url(./images/home/close.png);
+    background-image: url(../images/home/close.png);
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;
@@ -3202,7 +2772,7 @@ input:checked ~ .mult-button:hover {
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url(./images/home/arrow-menu.png);
+    background-image: url(../images/home/arrow-menu.png);
     background-repeat: no-repeat;
     vertical-align: middle;
     float: left;
@@ -3250,7 +2820,7 @@ input:checked ~ .mult-button:hover {
   .menu-mobile .content p {
     font-size: 18px;
     color: #cfcfcf;
-    margin: 20px 0 15px;
+    margin-top: 20px;
   }
   .menu-mobile .content .buttons {
     padding-top: 30px;
@@ -3292,7 +2862,7 @@ input:checked ~ .mult-button:hover {
     min-height: 1px;
     height: auto;
     padding: 20px 0 300px 0;
-    background: url(./images/home/banner-numero-sorte.mobile.jpg) no-repeat;
+    background: url(../images/home/banner-numero-sorte.mobile.jpg) no-repeat;
     background-size: cover;
     background-position: center top;
   }
@@ -3442,165 +3012,6 @@ input:checked ~ .mult-button:hover {
   .change-pass {
     font-size: 16px;
   }
-
-  /* Seção AP com Funeral */
-
-  .banner-funeral {
-    background: url(images/home/arte_seguro_mobile.png) no-repeat;
-    background-size: cover;
-    background-position: center bottom;
-    min-height: 410px;
-  }
-  .banner-funeral h3 {
-    padding-top: 28px;
-    font-size: 22px;
-    line-height: 25px;
-    text-align: center;
-  }
-  .banner-funeral h3 br {
-    display: none;
-  }
-
-  .guia-beneficios {
-    padding: 30px 0;
-  }
-  .guia-beneficios .topics {
-    margin-bottom: 0px;
-  }
-
-  .pedido {
-    min-height: 830px;
-  }
-  .pedido .content {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .pedido .content h4 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .pedido .prestacao {
-    margin-bottom: 20px;
-  }
-  .right-side .quant-btns {
-    justify-content: center;
-  }
-  .pedido .quant-btns .number {
-    width: 118px;
-  }
-  .pedido .prestacao {
-    text-align: center;
-  }
-  .pedido .price {
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  .pedido small {
-    max-width: 200px;
-    display: block;
-    margin: auto;
-    text-align: center;
-  }
-  .pedido .button {
-    font-size: 18px;
-  }
-
-  .faq .duvida {
-    font-size: 20px;
-    margin-top: 50px;
-  }
-
-  /* Seção Médico na Tela com AP */
-  .banner-medico {
-    background: url(images/home/arte_medico_mobile.png) no-repeat;
-    background-size: contain;
-    background-position: center bottom;
-    min-height: 438px;
-  }
-  .banner-medico h3,
-  .banner-medico h3 strong{
-    font-size: 22px;
-    line-height: 25px;
-    text-align: center;
-  }
-  .banner-medico h3 {
-    padding: 27px 0;
-  }
-  .banner-medico img {
-    width: 150px;
-    margin: auto;
-    display: block;
-  }
-
-  .cuide-mais {
-    padding: 30px 0;
-  }
-  .cuide-mais .title-v2 {
-    width: calc(100% + 20px + 20px) !important;
-    font-size: 20px;
-    line-height: 22px;
-  }
-  .cuide-mais .title-v2 br {
-    display: none;
-  }
-  .cuide-mais .subtitle {
-    font-size: 18px;
-    line-height: 25px;
-    margin: 20px auto 30px;
-  }
-  .cuide-mais .topic {
-    border: none !important;
-    border-top: 1px solid #FB7C0B !important;
-  }
-  .cuide-mais .topic:last-child {
-    border-bottom: 1px solid #FB7C0B !important;
-  }
-  .cuide-mais .topic:nth-child(2)::before, 
-  .cuide-mais .topic:nth-child(2)::after {
-    display: none;
-  }
-
-  .como-funciona p {
-    font-size: 16px;
-    line-height: 35px;
-  }
-  .como-funciona .button {
-    margin: 20px 0;
-  }
-  .como-funciona .steps {
-    margin-top: 45px;
-  }
-  .como-funciona .step {
-    max-width: 235px;
-    margin: auto;
-  }
-  .como-funciona .step h4 {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .pedido.medico-tela {
-    min-height: 620px;
-  }
-  .pedido.medico-tela .content {
-    justify-content: center;
-  }
-  .pedido.medico-tela .content > div:first-child {
-    flex: 0;
-  }
-
-  .pronto p,
-  .pronto p.sintomas {
-    font-size: 18px;
-    line-height: 25px;
-  }
-
-  .pronto h4 {
-    font-size: 20px;
-    line-height: 22px;
-  }
-
 }
 @media (max-width: 320px) {
   .user {
@@ -3614,17 +3025,8 @@ input:checked ~ .mult-button:hover {
     width: 30% !important;
     font-size: 13px !important;
   }
-  .banner-funeral h3 {
-    font-size: 20px;
-  }
-  .guia-beneficios .button {
-    font-size: 15px;
-  }
-  .contacts a {
-    font-size: 14px;
-  }
-  .contacts strong {
-    font-size: 15px;
+  .banner .fade .sorte a {
+    margin-left: 15px;
   }
 }
 .alertify .ajs-dimmer {
@@ -4647,6 +4049,3 @@ input:checked ~ .mult-button:hover {
 .slick-arrow.slick-hidden {
   display: none;
 }
-
-
-
